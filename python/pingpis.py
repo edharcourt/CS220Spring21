@@ -23,12 +23,13 @@ def ping(host):
 
 
 if __name__ == "__main__":
-    hosts  = ["10.40.4.46", "10.40.10.50", "10.40.8.33",
-              "10.40.4.34", "10.40.6.14", "10.40.8.10",
-              "10.40.6.20", "10.40.6.26"]
+    hosts  = open("piips.txt")
     success = True
     for host in hosts:
-        if not ping(host):
+        host = host.strip()  # get rid of eol
+        if ping(host):
+            print(f"{host} is alive")
+        else:
             print(f"{host} is not alive")
             success = False
 
