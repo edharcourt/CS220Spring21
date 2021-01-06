@@ -1,0 +1,2 @@
+Poindexter has a 10 mbps internet connection and needs to download a 10GiB file. How long will it take assuming Poindexter has full use of his internet connection? (Show work for full credit).  Express answer in minutes.
+
