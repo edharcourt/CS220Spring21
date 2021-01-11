@@ -1,6 +1,8 @@
+#!/usr/bin/python3
 """
 Utility for making sure all of the Raspberry Pis are up and running.
 """
+# Modified from
 # https://stackoverflow.com/questions/2953462/pinging-servers-in-python
 
 import platform    # For getting the operating system name
@@ -9,7 +11,6 @@ import subprocess  # For executing a shell command
 def ping(host):
     """
     Returns True if host (str) responds to a ping request.
-    Remember that a host may not respond to a ping (ICMP) request even if the host name is valid.
     """
 
     # Option for the number of packets as a function of
