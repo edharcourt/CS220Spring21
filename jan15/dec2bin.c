@@ -6,8 +6,8 @@ void printbin(int n) {
         printf("0");
     }
     else {
-        printbin(n/2);
-        printf("%d", n%2);
+        printbin(n >> 1);
+        printf("%d", n & 1);
     }
 }
 
