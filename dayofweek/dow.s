@@ -50,3 +50,5 @@ dow:          // label that marks the function and its name
    sdiv r1, r9, r8
    mul r1, r1, r8
    sub r0, r9, r1   // almost done! 
+
+   bx lr   // identical to bx lr
