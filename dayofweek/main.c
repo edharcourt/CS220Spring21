@@ -24,5 +24,5 @@ int main(int argc, char *argv[]) {
                      "Thursday", "Friday", "Saturday"};
 
     printf("%s\n", days[day]);
-    printf("%d\n", m);
+    printf("%d\n", m); // print the month
 }

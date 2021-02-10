@@ -17,6 +17,10 @@ int dow(int m, int d, int y) {
 // r1 - day 
 // r2 - year
 dow:          // label that marks the function and its name
+
+   // save registers we use on the stack sp they can be restored
+   // for the caller.
+   push { r4, r5, r6, r7, r8, r9, r10 }
    mov r3, #14
    mov r5, #12
    sub r4, r3, r0    // flexible second argument
@@ -51,4 +55,6 @@ dow:          // label that marks the function and its name
    mul r1, r1, r8
    sub r0, r9, r1   // almost done! 
 
+   // restore r4 - r10 to their original value
+   pop { r4-r10 }
    bx lr   // identical to bx lr
