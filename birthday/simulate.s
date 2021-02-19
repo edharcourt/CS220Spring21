@@ -26,7 +26,7 @@ int simulate(int n, int i) {
     return 0;
 }
 */
-
+.cpu cortex-a53
 .text
 simulate:
     push { r4-r8, r11, lr }
@@ -64,7 +64,25 @@ while1:
     b while1
 
 endwhile1:
-   
+    mov r8, #0
+while2:
+    cmp r8, r6
+    bge endwhile2
+    add r0, r7, r8, lsl #2   // cal[j]
+    ldr r0, [r0]
+    cmp r0, #1
+    ble endif
+    mov r0, #1
+    b return
+endif:
+    add r8, r8, #1
+    b while2
+endwhile2:
+    mov r0, #0
+return:
+    add sp, sp, r6, lsl #2
+    pop { r4-r8, r11, lr }
+    bx lr    
 
 
 
