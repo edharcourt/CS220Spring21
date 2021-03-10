@@ -55,7 +55,7 @@ extern BigInt *acc(BigInt *x, const BigInt *y);
 extern BigInt *shift_left(BigInt *x, int n);
 
 /*
- * return the result of multiply xx and y allocating new storage for 
+ * Return the result of multiply x and y allocating new storage for 
  * the result.  It is the responsibility of the caller to free the
  * storage when they are finished with it.
  */
