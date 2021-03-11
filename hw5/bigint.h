@@ -3,6 +3,7 @@
 
 /*
  * An 8 bit unsigned integer. 
+ *
  * C doesn't specify if char is signed or unsigned. 
  * So define a byte to be an unsigned char. 
  */
@@ -19,6 +20,24 @@ typedef unsigned short uint16_t;
 /*
  * The BigInt struct. n is the number of digits in the number
  * and ds is an array of digits. One digit per element.
+ *
+ * ds[0] contains the least significant digit.
+ *
+ * For example, the number 397 would be stored in the array as
+ *
+ *         -------------
+ *         | 7 | 9 | 3 |
+ *         -------------
+ *  index =  0   1   2
+ *
+ *  Or the way we have been drawing it in class with index 0 on the right.
+ *
+ *         -------------
+ *         | 3 | 9 | 7 |
+ *         -------------
+ *  index =  2   1   0
+ *
+ *  They are equivalent.
  */
 typedef struct {
     byte *ds;
