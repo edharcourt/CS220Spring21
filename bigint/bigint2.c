@@ -29,7 +29,7 @@ BigInt *make_int(const char *x) {
     for (int i = 0; i < lenx; i += 2) { 
         b->ds[i/2] = hexval(x[lenx - i - 1]); 
 
-        // gaurd against out of bounds no odd length strings
+        // guard against out of bounds on odd length strings
         if (lenx - i - 2 >= 0)
             b->ds[i/2] |= (hexval(x[lenx - i - 2]) << 4);
     }
