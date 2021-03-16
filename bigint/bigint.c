@@ -19,8 +19,9 @@ BigInt *make_int(const char *x) {
 
 // make a BigInt of n zeros
 BigInt *make_zero(int n) {
-    char tmp[n];
+    char tmp[n + 1];
     memset(tmp, '0', n);
+    tmp[n] = 0; // null terminate
     return make_int(tmp);
 }
 

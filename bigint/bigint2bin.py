@@ -38,6 +38,7 @@ def dec2bin(q: str) -> str:
     return digs 
 
 if __name__ == "__main__":
+    print(div2("123"))
     s = input("Enter a number:")
     print('0b' + dec2bin(s))
     print(bin(int(s)))
