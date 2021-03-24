@@ -17,7 +17,6 @@ byte div2(char *s, char *q, uint8_t *z) {
         if (p != 0) 
             *z = 0; 
 
-        // q = q + chr(p + ord('0'))
         *q++ = p + '0';
 
         // out of bounds error
@@ -25,13 +24,11 @@ byte div2(char *s, char *q, uint8_t *z) {
             r = (r - 2*p) * 10 + (s[i+1] - '0');
     } 
 
-    *q = 0;  // null terminate!!!!!!!!!
+    *q = 0;
+
     r = r - 2*p;
     return r;
 }
-
-
-
 
 /* 
 def dec2bin(q: str) -> str:
@@ -48,33 +45,20 @@ def dec2bin(q: str) -> str:
     return digs
 
 */
-
-// reverse in place without using more memory
-char *reverse(char *s) {
-
-    int n = strlen(s);
-
-    for (int i = 0; i < n/2; i++) {
-        char tmp = s[i];
-        s[i] = s[n - i - 1]; 
-        s[n - i - 1] = tmp; 
-    }
-
-    return s;
-}
-
 // caller should free result when done with it
-// s is modified if passed a constant wil crash
-// make a copy of s
 char *dec2bin(char *s) {
-    char * rslt = malloc(4*strlen(s) + 1);
-    char * beg_rslt = rslt;  // keep a pointer to the beginning
+    char *rslt = malloc(4*strlen(s) + 1);
+    char *ptr_rslt = rslt;
+
     char q[strlen(s) + 1];    
+    //char num[strlen(s)+1];
+    char *num = s; 
+    strcpy(num,s);
     uint8_t z = 0;   
 
     while (1) {
-        int r = div2(s, q, &z);   
-        strcpy(s, q);
+        int r = div2(num, q, &z);   
+        strcpy(num, q);
         *rslt++ = r + '0';
 
         if (z) 
@@ -82,10 +66,14 @@ char *dec2bin(char *s) {
     }
 
     *rslt = 0;
-    return reverse(beg_rslt);
+    return ptr_rslt;
+
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char*argv[]) {
+
     //printf("%s\n", dec2bin(argv[1]));
-    printf("%s\n", dec2bin("23"));
+    char n[] = "23";;
+    //strcpy(n, "23");
+    printf("%s\n", dec2bin(n));
 }
