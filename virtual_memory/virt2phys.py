@@ -4,7 +4,7 @@ import sys
 # by Vanderbauwhede and Singer
 # Chapter 6 section 6.4.3 page 135-136
 
-# Need to run this as sudo, otherwise physcial page table 
+# Need to run this as sudo, otherwise physical page table 
 # entry is zeroed out.
 
 pid = int(sys.argv[1], 10)   # process ID
