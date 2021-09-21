@@ -72,8 +72,8 @@ char *dec2bin(char *s) {
 
 int main(int argc, char*argv[]) {
 
-    //printf("%s\n", dec2bin(argv[1]));
-    char n[] = "23";;
+    printf("%s\n", dec2bin(argv[1]));
+    //char n[] = "23";;
     //strcpy(n, "23");
-    printf("%s\n", dec2bin(n));
+    //printf("%s\n", dec2bin(n));
 }

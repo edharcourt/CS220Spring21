@@ -1,11 +1,14 @@
+
 #include <stdio.h>
+#include <stdlib.h>
 
-//extern int ipow(int, int);
-extern int between(int x, int y, int z);
+extern int ipow(int x, int y);
 
-int main() {
-     //printf("%d\n", ipow(2,11));
-     printf("%d\n", between(2,11,50)); // print 1
-     printf("%d\n", between(2,2,50));  // boundary case 
-     printf("%d\n", between(2,50,50));  // boundary case 
-}
+int main(int argc, char *argv[]) {
+
+    int x = atoi(argv[1]);
+    int y = atoi(argv[2]);
+
+    printf("%d\n", ipow(x,y));
+    return 0;
+} 

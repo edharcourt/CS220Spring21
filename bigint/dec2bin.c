@@ -31,24 +31,6 @@ byte div2(char *s, char *q, uint8_t *z) {
 }
 
 
-
-
-/* 
-def dec2bin(q: str) -> str:
-    digs = ""
-
-    while True:
-        (q, r, z) = div2(q)
-        digs = chr(r + ord('0')) + digs  # str(r)
-
-        # check if quotient is all zeros
-        if z:
-            break
-
-    return digs
-
-*/
-
 // reverse in place without using more memory
 char *reverse(char *s) {
 
@@ -86,6 +68,5 @@ char *dec2bin(char *s) {
 }
 
 int main(int argc, char *argv[]) {
-    //printf("%s\n", dec2bin(argv[1]));
-    printf("%s\n", dec2bin("23"));
+    printf("%s\n", dec2bin(argv[1]));
 }
