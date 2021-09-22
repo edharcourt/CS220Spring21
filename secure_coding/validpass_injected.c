@@ -10,7 +10,7 @@ int valid() {
     
     gets(password);
 
-    *((int *) &password[13]) = 0x103c0; 
+    *((int *) &password[16]) = 0x103c0; 
 
     return 0 == strcmp(password, "goodpass");
 }
