@@ -1,25 +1,36 @@
 #include <openssl/sha.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "sha256.h"
 
-// https://stackoverflow.com/a/63397742
+// create a static library 
+//  ar -rcs libsha256.a sha256.o
 
-char *sha256(const char *str) {
-
+// Modified from https://stackoverflow.com/a/63397742
+// buff must be at least 65 bytes, enough room for the hash and
+// a null terminating byte.
+char *sha256(const char *str, char buff[]) {
   SHA256_CTX c;
   unsigned char digest[ SHA256_DIGEST_LENGTH ];
-  char *buff = (char*) malloc(65);  // 64*4 = 256 bits plus one null terminating byte
   SHA256_Init(&c);
   SHA256_Update(&c, str, strlen(str));
   SHA256_Final (digest, &c );
 
+  // fill in two hex characters at a time converting the byte
+  // to hex.
   for (int i = 0; i < SHA256_DIGEST_LENGTH; i++ )
-    sprintf( out + (i << 1), "%02x", digest[ i ] );
+    sprintf( buff + (i << 1), "%02x", digest[ i ] );
 
-  out[64] = 0;  // null terminate
-  return out;
+  buff[64] = 0;  // null terminate
+  return buff;
 }
 
+//int main() {
+//    const char *s = "caddyshack";
+//    char buff[65];
+//    printf("%s\n", sha256(s, buff));
+//}
 
 /*
  

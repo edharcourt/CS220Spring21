@@ -2,9 +2,12 @@
 #include <string.h> 
 #include <stdlib.h>
 #include <termios.h>
+#include "sha256.h"
+
+// Compile line 
+//  gcc -o vp validpass_better.c -lsha256 -lcrypto -L.
 
 #define MAX_PWD_LEN 12
-extern char *gets(char *s);
 
 void echo(int flag) {
     struct termios termInfo, save;
@@ -32,6 +35,8 @@ void echo(int flag) {
 
 // return true if the user entered the magic password
 // false otherwise
+// https://passwordrecovery.io/sha256/
+// sha256("caddyshack") == 3e711846f05d70a6fe5c0ed0a81449c65f27493ff1270ab37b3b841292f4fdd0
 int valid() {
 
     char password[MAX_PWD_LEN];
@@ -46,8 +51,10 @@ int valid() {
 
     //*((int *) &password[16]) = 0x103c0; 
 
+    // replace newline with null byte?
     password[strlen(password)-1] = '\0';
-    return 0 == strcmp(password, "caddyshack");
+    char buff[65];
+    return 0 == strcmp(sha256(password, buff), "3e711846f05d70a6fe5c0ed0a81449c65f27493ff1270ab37b3b841292f4fdd0");
 }
 
 int main(void) {
