@@ -2,6 +2,13 @@
 #include <string.h> 
 #include <stdlib.h>
 
+/*
+ * 1) buffer problem
+ * 2) cleartext password in code
+ * 3) characters echoed at console
+ * 
+ */
+
 extern char *gets(char *s);
 
 int valid() {

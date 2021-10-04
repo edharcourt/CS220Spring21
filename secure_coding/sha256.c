@@ -10,6 +10,7 @@
 // Modified from https://stackoverflow.com/a/63397742
 // buff must be at least 65 bytes, enough room for the hash and
 // a null terminating byte.
+// return buff
 char *sha256(const char *str, char buff[]) {
   SHA256_CTX c;
   unsigned char digest[ SHA256_DIGEST_LENGTH ];
