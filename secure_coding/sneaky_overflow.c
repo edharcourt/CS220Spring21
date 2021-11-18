@@ -2,11 +2,12 @@
 #include <stdlib.h>
 
 /*
- *  Creates a copy of src allocating and allocating memory for the copy.
- *  The caller must free the memory allocated
+ *  Creates a copy of src and allocating memory for the copy
+ *  and returning a pointer to the newly allocated memory. 
+ *  The caller must free the memory allocated.
  *
  *  n - the size of src (src is not necessarily a null terminated string)
- *      Think of it more appropriately as an array of bytes
+ *      Think of it more appropriately as an array of bytes.
  *
  *  src - the bytes to be copied
  * 
