@@ -2,7 +2,7 @@ from typing import Tuple
 
 # takes string s and return the quotient and the remainder
 # after dividing by 2 using the long division algorithm
-def div2(s: str) -> Tuple[str,int, bool]:
+def div2(s: str) -> Tuple[str,int,bool]:
 
     q = ""   # build up quotient from empty string
     zero = True
