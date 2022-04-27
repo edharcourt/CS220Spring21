@@ -3,10 +3,16 @@
 int main() {
 
     int x = 7;
-    int *px = &x; // & address-of operatoro
+    int *p = &x; // & address-of operatoro
 
-    printf("%d %d\n", x, *px);
+    printf("%d %d\n", x, *p);
 
-    printf("%p %p\n", px, &px);
+    printf("%p %p\n", px, &p);
 
+    p = x;
+    x = p;
+    //&x = 88;
+    *p = 33;
+    x = 23;
+    p = NULL;
 }

@@ -21,7 +21,8 @@ double distance(double lat1, double lon1,
 
     double y = 2 * atan2(sqrt(x), sqrt(1-x)); 
 
-    double R = 3958.8; // miles
+    //double R = 3958.8; // miles
+    double R = 6371000.0/1609.34; // miles
     
     return R * y;
 
@@ -55,7 +56,7 @@ int main(int argc, char *argv[]) {
 
         // What can go wrong?  Poorly formatted file
         int eof = fscanf(f, "%5s,%2s,%[^,],%lf,%lf",
-		   code, tstate, tcity, &tlat, &tlon);
+		   code, tstate, tcity, &tlon, &tlat);
 
         if (eof == EOF) 
             break;

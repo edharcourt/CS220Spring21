@@ -15,6 +15,7 @@ int ipow(int x, int y) {
 */
 .text
 ipow:
+    nop
     mov r2, #1   // r = 1
 while:
     cmp r1, #0
