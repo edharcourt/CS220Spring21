@@ -27,6 +27,8 @@ int simulate(int n, int i) {
 }
 */
 .cpu cortex-a53
+.data
+seedhack: .word 0
 .text
 simulate:
     push { r4-r8, r11, lr }
