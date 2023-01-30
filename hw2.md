@@ -8,14 +8,18 @@ In this assignment you will write a few different C functions and call them from
 
 1. [10 points] Write a C function `first_nonrepeat` that takes a string and returns the index of the first non-repeated chracter in the string. Put this function in a file `first_nonrepeat.c`. For instance, the index of the first nonrepeated character in "total" is 1 (because it is the index of "o")  and the index of the first non-repeated character in "teeter" is is 5 (because the index of "r" is 5). If the string does not have any non-repeated characters (such as "meme" and "unprosperousness") the function should return -1. 
 
+    extern int first_nonrepeat(char \*str);
+
 Hint: I can think of two obvious ways to write this function. One is a brute force way that looks at the characters in the input string multiple times. The other way only loops through the string at most twice and uses the fact that characters in C are really 8 bit integers and you could use a character as an index into an array that kept track of character frequencies. (How big does the array need to be?). Partial credit for the brute force technique and full credit for using the characters as an index into an array. 
 
-    printf("%d\n", first_nonrepeat("total") == 1); 
+    // These should all print 1 (true)
+	printf("%d\n", first_nonrepeat("total") == 1); 
     printf("%d\n", first_nonrepeat("teeter") == 5);
     printf("%d\n", first_nonrepeat("unprosperousness") == -1); 
     printf("%d\n", first_nonrepeat("palatial") == 0);
 
-2. [10 points] Write a C function longest_distinct that takes an array of integers and returns the length of the longest subarray where all of the elements are distinct.  Put this in a file named longest_distinct.c. For example, if given the C array 5, 1, 3, 5, 2, 3, 4, 1 the function would return 5 because the subarray 5, 2, 3, 4, 1 is the longest subarray where all of the elements are different. 
+2. [10 points] Write a C function `longest_distinct` that takes an array of integers and returns the length of the longest subarray where all of the elements are distinct.  Put this in a file named `longest_distinct.c`. For example, if given the C array `5, 1, 3, 5, 2, 3, 4, 1` the function would return 5 because the subarray `5, 2, 3, 4, 1` is the longest subarray where all of the elements are different. 
+
 Try this on the arrays 
 1, 1, 1, 1, 1, 1 // answer is 1 1, 1, 2, 3, 4, 5, 3 //The answer is 5 129, 990000000, 12345, 99 // answer is 4  
 In C, when passing an array as an argument you usually need to also pass the integer length of the array. That is because in C, arrays do not know how big they are (they do not have a size attribute or length method). So the type declaration for the longest_distinct function should be … 
