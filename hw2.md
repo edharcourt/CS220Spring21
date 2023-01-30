@@ -12,12 +12,13 @@ In this assignment you will write a few different C functions and call them from
 
     > Hint: I can think of two obvious ways to write this function. One is a brute force way that looks at the characters in the input string multiple times. The other way only loops through the string at most twice and uses the fact that characters in C are really 8 bit integers and you could use a character as an index into an array that kept track of character frequencies. (How big does the array need to be?). Partial credit for the brute force technique and full credit for using the characters as an index into an array. 
 
-
+```
     // These should all print 1 (true)
     printf("%d\n", first_nonrepeat("total") == 1); 
     printf("%d\n", first_nonrepeat("teeter") == 5);
     printf("%d\n", first_nonrepeat("unprosperousness") == -1); 
     printf("%d\n", first_nonrepeat("palatial") == 0);
+```
 
 2. [5 points] Write a C function `unique_region` that takes an array of integers and returns the length of the longest region of the array where all of the elements are unique.  Put this in a file named `unique_region.c`. For example, if given the C array `5, 1, 3, 5, 2, 3, 4, 1` the function would return 5 because the subarray `5, 2, 3, 4, 1` is the longest subarray where all of the elements are different. 
 
