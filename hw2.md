@@ -14,7 +14,7 @@ In this assignment you will write a few different C functions and call them from
 
 
     // These should all print 1 (true)
-	printf("%d\n", first_nonrepeat("total") == 1); 
+    printf("%d\n", first_nonrepeat("total") == 1); 
     printf("%d\n", first_nonrepeat("teeter") == 5);
     printf("%d\n", first_nonrepeat("unprosperousness") == -1); 
     printf("%d\n", first_nonrepeat("palatial") == 0);
