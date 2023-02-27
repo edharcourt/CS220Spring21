@@ -53,7 +53,7 @@ def dec2hex(q: str) -> str:
     return digs
 
 
+import sys
 if __name__ == "__main__":
-    s = input("Enter a number:")
-    print('0x' + dec2hex(s))
-    print(hex(int(s)))
+    print('0x' + dec2hex(sys.argv[1]))
+    print(hex(int(sys.argv[1])))
