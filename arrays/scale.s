@@ -10,6 +10,7 @@ void scale(int *vec, int s, int n) {
 */
 .text
 scale:
+    push { r4, r5 }
     mov r3, #0
 
 while:
@@ -25,4 +26,5 @@ while:
     b while 
 
 endwhile:
+    pop { r4, r5 }
     bx lr
