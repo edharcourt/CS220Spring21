@@ -26,13 +26,16 @@ def ping(host):
 if __name__ == "__main__":
     hosts  = open("piips.txt")
     success = True
+    count = 0
     for host in hosts:
         host = host.strip()  # get rid of eol
         if ping(host):
             print(f"{host} is alive")
+            count += 1
         else:
             print(f"{host} is not alive")
             success = False
 
     if success:
        print("All hosts are alive")
+    print(f"{count} hosts alive")
